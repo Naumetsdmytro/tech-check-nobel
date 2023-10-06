@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Tech-Check</title>
+</head>
+
+<body>
+    <div class="tech-check">
+        <h3 class="tech-check-title">Prepare Your Tech</h3>
+        <img src="./images/putin.jpeg" alt="putin" class="putin">
+        <div class="tech-camera-container">
+            <p class="tech-instructions">Before we dive in, let's make sure your camera is good to go! <span>It's simple
+                    – just click the button below and strike a pose or show any reaction you like!</span></p>
+            <div class="video-container">
+                <video id="video" autoplay muted></video>
+            </div>
+            <button id="camera-check-btn" class="tech-check-button">Check my camera</button>
+        </div>
+        <div class="tech-microphone-container">
+            <p class="tech-instructions"><span>Great!</span> Your camera is working perfectly. Now, let's check your
+                microphone.
+                <span>Click the button, introduce yourself, and tell us where you're from.</span> We'll ensure your
+                voice comes
+                through clear during your lesson.
+            </p>
+            <div id="microphone-check" class="tech-microphone-backdrop">
+                <div class="tech-spinner"></div>
+                <p class="microphone-loading-text">Testing microphone...</p>
+            </div>
+            <button id="micro-check-btn" class="tech-check-button">Check my microphone</button>
+        </div>
+        <p id="microphone-failure-text" class="failure-tech-text">
+            <span>We encountered an issue while checking your microphone.</span> Don't worry, you can join the
+            meeting directly
+            to perform the microphone check again. Please click <a href="<meeting-link>" target="_blank">here</a> to
+            join the meeting and ensure your microphone is working properly.
+        </p>
+        <p id="camera-failure-text" class="failure-tech-text">
+            <span>We encountered an issue while checking your camera.</span> Don't worry, you can join the meeting
+            directly
+            to perform the camera check again. Please click <a href="<meeting-link>" target="_blank">here</a> to
+            join the meeting and ensure your camera is working properly.
+        </p>
+        <div class="tech-audio-container">
+            <p class="tech-instructions"><span>Great!</span> Your camera and microphone are working perfectly.
+                <span>Now, let's check your headset.</span> Click the button below to play a sound. If you don't hear
+                anything, please check your headset's
+                connection and volume!
+            </p>
+            <div class="audio-container">
+                <audio id="audio-check" class="audio" src="./images/Eminem_-_Lose_Yourself_(Jesusful.com).mp3"
+                    controls></audio>
+                <button id="audio-check-btn" class="tech-check-button">Check my Audio</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="face-api.js"></script>
+<script src="js/microInspector.js"></script>
+<script src="js/videoInspector.js"></script>
+<script src="js/interfaceTechCheckLogic.js"></script>
+
+</html>
+
+
+<!-- // console.log(faceapi.nets)
+// Promise.all([
+// faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+// faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+// faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+// faceapi.nets.faceExpressionNet.loadFromUri('/models')
+// ]).then(startVideo)
+
+
+
+// button.addEventListener('click', () => {
+// console.log('work');
+// const isSpeechTime = true;
+
+// if (isSpeechTime) {
+// window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+// const recognition = new window.SpeechRecognition();
+// recognition.lang = 'en-US';
+// recognition.interimResults = true;
+
+// recognition.addEventListener('result', e => {
+// const transcript = Array.from(e.results)
+// .map(result => result[0])
+// .map(result => result.transcript);
+
+// console.log(transcript);
+// });
+
+// recognition.start();
+// }
+// });
+
+// function startVideo() {
+// navigator.getUserMedia(
+// { video: {} },
+// stream => video.srcObject = stream,
+// error => console.log(err)
+// );
+// }
+
+// video.addEventListener('play', () => {
+// setInterval(async () => {
+// const detections = await faceapi.detectAllFaces(
+// video,
+// new faceapi.TinyFaceDetectorOptions()
+// )
+// .withFaceLandmarks()
+// .withFaceExpressions()
+
+// console.log(detections[0].expressions.happy > 0.5)
+// }, 300);
+// }); -->
